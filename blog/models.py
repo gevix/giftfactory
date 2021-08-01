@@ -23,9 +23,6 @@ class BlogPost(models.Model):
 class Button(models.Model):
     url = models.URLField(max_length=50)
     title = models.CharField(max_length=50)
-    image = models.ImageField(upload_to='images')
+    image = models.ImageField(upload_to='static/blog')
     description = models.TextField(max_length=2000)
     blogPostRelated = models.ForeignKey(BlogPost, on_delete=models.CASCADE)
-
-
-

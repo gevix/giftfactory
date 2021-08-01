@@ -19,10 +19,11 @@
             <h5>{{ object.description }}</h5>
 
             {% for button in object.button_set.all %}
+            {% load static %}
             <div class="card mb-3" style="max-width: 540px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src=" {{ button.image.url }} " class="img-fluid rounded-start" alt="...">
+                        <img src=" {{ button.image.url }} " class="img-fluid rounded-start" alt=" {{ button.image.url }} ">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
