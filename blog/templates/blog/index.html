@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Main Page
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+  <h1>Stay original</h1>
+  <h3>We'll help</h3>
+  <h5>Best gift ideas for every occasion</h5>
+</div>
+{% load static %}
+<div class="container">
+<img src="{% static 'blog/mainImage.png' %}" class="img-fluid" alt="Main Image">
+</div>
+<h1 class="text-center">Gift Ideas:</h1>
+
+<div class="container">
+  <div class="row">
+    {% for thumb in object_list %}
+    {% load static %}
+  <div class="col-sm-6 col-lg-4">
+    <div class="card">
+      <img src="{{thumb.image.url}}" class="card-img-top" alt="{{ thumb.image.url }} ">
+      <div class="card-body">
+        <h5 class="card-title">{{ thumb.title }}</h5>
+        <p class="card-text">{{ thumb.description }}</p>
+        <a href="{{ thumb.slug }}" class="stretched-link"></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
+
+
+
+{% endblock %}
+
+

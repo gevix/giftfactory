@@ -1,0 +1,44 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+{{ object.title }}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-1">
+
+        </div>
+        <div class="col-xl-10">
+
+            <h1>{{ object.title }}</h1>
+            <img src=" {{ object.image.url }} " class="img-fluid" alt="...">
+
+            <h5>{{ object.description }}</h5>
+
+            {% for button in object.button_set.all %}
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src=" {{ button.image.url }} " class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ button.title }}</h5>
+                            <p class="card-text">{{ button.description }}</p>
+                            <a href="{{ button.url }}" class="btn btn-primary stretched-link">Buy on Amazon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
