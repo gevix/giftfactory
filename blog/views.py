@@ -18,4 +18,8 @@ class CategoryView(DetailView):
     template_name = 'blog/category.html'
 
 
+class AuthorView(ListView):
+    model = BlogPost
+    template_name = 'blog/author.html'
+
 # Create your views here.
