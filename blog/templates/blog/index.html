@@ -13,7 +13,7 @@ Main Page
 </div>
 {% load static %}
 <div class="container">
-<img src="{% static 'blog/People_mainpaige.svg' %}" class="img-fluid" alt="Main Image">
+<img src="{% static 'blog/img/People_mainpaige.svg' %}" class="img-fluid" alt="Main Image">
 </div>
 <h1 class="text-center">Gift Ideas:</h1>
 
@@ -27,7 +27,7 @@ Main Page
       <div class="card-body">
         <h5 class="card-title">{{ thumb.title }}</h5>
         <p class="card-text">{{ thumb.description }}</p>
-        <a href="{{ thumb.slug }}" class="stretched-link"></a>
+        <a href="{% url 'blogpost' thumb.slug %}" class="stretched-link"></a>
       </div>
     </div>
   </div>
