@@ -1,4 +1,5 @@
 from django.db import models
+from datetime import datetime
 
 
 class Category(models.Model):
@@ -10,6 +11,7 @@ class Category(models.Model):
 
 
 class BlogPost(models.Model):
+    date = models.DateField(auto_now=True)
     slug = models.SlugField(max_length=200)
     title = models.CharField(max_length=50)
     image = models.ImageField(upload_to='static/blog')

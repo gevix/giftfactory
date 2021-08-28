@@ -14,6 +14,8 @@ from pathlib import Path
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.conf.global_settings import MEDIA_ROOT
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -21,12 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-4dt^m0an296#@a6$ok&8e9k*9cg13_b9f(r&44+enttu0ncxvg'
+SECRET_KEY = 'django-insecure-4dt^m0an296#@a6sdtfghbjnkml$ok&8e9k*9cg13_b9f(r&44+enttu0ncxvg'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['giftfactory.cc', 'www.giftfactory.cc', '162.0.223.223', '127.0.0.1']
 
 
 # Application definition
@@ -121,9 +123,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [STATIC_DIR]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static', ),
+                    os.path.join(BASE_DIR, 'blog/static:', )]
+
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

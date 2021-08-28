@@ -7,22 +7,26 @@ Main Page
 {% block content %}
 
 <div class="container">
-  <h1>Stay original</h1>
-  <h3>We'll help</h3>
-  <h5>Best gift ideas for every occasion</h5>
+  <h1 class="display-1 text-center ">Stay original</h1>
 </div>
 {% load static %}
-<div class="container">
-<img src="{% static 'blog/img/People_mainpaige.svg' %}" class="img-fluid" alt="Main Image">
+<div class="row">
+  <div class="col-xl-2"></div>
+  <div class="col-xl-8">
+    <img src="{% static 'blog/img/GiftFactory.svg' %}" class="img-fluid" alt="Main Image">
+  </div>
 </div>
+
 <h1 class="text-center">Gift Ideas:</h1>
 
 <div class="container">
+  <div class="card-columns">
   <div class="row">
+
     {% for thumb in object_list %}
-    {% load static %}
-  <div class="col-sm-6 col-lg-4">
-    <div class="card">
+
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card mb-3">
       <img src="{{thumb.image.url}}" class="card-img-top" alt="{{ thumb.image.url }} ">
       <div class="card-body">
         <h5 class="card-title">{{ thumb.title }}</h5>
@@ -32,6 +36,7 @@ Main Page
     </div>
   </div>
   {% endfor %}
+    </div>
 </div>
 </div>
 

@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}"
 
-     <!-- Global site tag (gtag.js) - Google Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T4SV5MYXY1"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -29,20 +29,18 @@
 
 
 <div class="container">
-  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-    <a href="{% url 'home' %}" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
-        <span class="fs-5 fw-bold">GiftFactory</span>
-    </a>
-      <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-      <li><a href="{% url 'category' 'for-her' %}" class="nav-link px-50 link-dark fw-bold">For Her</a></li>
+  <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="{% url 'home' %}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img class="bi me-2" width="200" height="40" src="{% static 'blog/img/LogoNavbar.svg'%}">
+      </a>
+
+      <ul class="nav nav-pills">
+        <li><a href="{% url 'category' 'for-her' %}" class="nav-link px-50 link-dark fw-bold">For Her</a></li>
       <li><a href="{% url 'category' 'for-kids' %}" class="nav-link px-50 link-dark fw-bold">For Kids</a></li>
       <li><a href="{% url 'category' 'for-him' %}" class="nav-link px-50 link-dark fw-bold">For Him</a></li>
       <li><a href="{% url 'category' 'popular' %}" class="nav-link px-50 link-dark fw-bold">Popular</a></li>
-    </ul>
-
-    <div class="col-md-3 text-end">
-    </div>
-  </header>
+      </ul>
+    </header>
 </div>
 
 

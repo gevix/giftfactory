@@ -8,4 +8,21 @@ Marie Smith, Author at GiftFactory
 
 test
 
+<div class="container">
+  <div class="row">
+    {% for thumb in object_list %}
+
+  <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="card">
+      <img src="{{thumb.image.url}}" class="card-img-top" alt="{{ thumb.image.url }} ">
+      <div class="card-body">
+        <h5 class="card-title">{{ thumb.title }}</h5>
+        <p class="card-text">{{ thumb.description }}</p>
+        <a href="{% url 'blogpost' thumb.slug %}" class="stretched-link"></a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+</div>
 {% endblock %}
